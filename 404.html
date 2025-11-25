@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página Não Encontrada</title>
+    <style>
+        :root {
+            --neon-color: #0f0;
+            --error-color: #ff3333; /* Vermelho para erro */
+            --bg-color: #050505;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--neon-color);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Scanlines */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .glitch-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 8rem;
+            margin: 0;
+            color: var(--error-color);
+            text-shadow: 2px 2px 0px var(--neon-color);
+            animation: glitch 1s infinite linear alternate-reverse;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            border-bottom: 1px solid var(--error-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            background: transparent;
+            color: var(--neon-color);
+            border: 2px solid var(--neon-color);
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none; /* Para parecer link mas agir como botão */
+            display: inline-block;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .back-btn:hover {
+            background: var(--neon-color);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-color);
+        }
+
+        /* Animação de Glitch (Erro visual) */
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="glitch-container">
+        <h1>404</h1>
+        <h2>FATAL ERROR: PAGE_NOT_FOUND</h2>
+        
+        <p>
+            Essa página não existe neste servidor...<br>
+            <strong>Mas é estranho, porque na minha máquina ela abria normal.</strong>
+        </p>
+        <p style="font-size: 0.9rem; color: #666;">
+            (Deve ser problema de cache do seu navegador)
+        </p>
+
+        <a href="index.html" class="back-btn">[ VOLTAR PARA O SISTEMA ]</a>
+    </div>
+
+</body>
+</html>

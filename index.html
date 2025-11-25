@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Excuse Generator v3.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>> SYSTEM_ERROR_LOG_GENERATOR_v3.0</h1>
+        
+        <div class="category-box">
+            <button class="cat-btn active" onclick="mudarCategoria('classico', this)">[ MODO: CLÁSSICO ]</button>
+            <button class="cat-btn" onclick="mudarCategoria('infra', this)">[ CULPA DA REDE ]</button>
+            <button class="cat-btn" onclick="mudarCategoria('front', this)">[ TELA TORTA ]</button>
+            <button class="cat-btn" onclick="mudarCategoria('moderno', this)">[ CULPA DA IA ]</button>
+        </div>
+
+        <div class="screen-area">
+            <span id="typed-text">Selecione o tipo de crise e gere o log...</span>
+        </div>
+
+        <div class="controls">
+            <button class="main-btn" onclick="iniciarGeracao()">[ GERAR DESCULPA ]</button>
+            <button class="action-btn" onclick="copiarTexto()" title="Copiar para o Clipboard">📋</button>
+        </div>
+        
+        <div class="status-bar">STATUS: AGUARDANDO INPUT DO USUÁRIO...</div>
+    </div>
+
+    <div id="toast-box" class="toast">Log copiado com sucesso!</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
